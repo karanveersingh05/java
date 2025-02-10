@@ -32,7 +32,7 @@ Welcome to my **Advanced Java** repository! 🚀 This repo contains all my class
 
 2️⃣ Open the project in **IntelliJ IDEA** or **Eclipse**.
 
-3️⃣ Ensure **JDK 17+** is installed and properly configured.
+3️⃣ Ensure **JDK 6** is installed and properly configured.
 
 4️⃣ If using database-related projects:
 - Install **MySQL** or **SQLite**.
@@ -52,7 +52,7 @@ Welcome to my **Advanced Java** repository! 🚀 This repo contains all my class
 
 ## 🛠️ Tech Stack
 
-🔹 **Java 17+**  
+🔹 **Java 6**  
 🔹 **Swing & AWT** (For GUI)  
 🔹 **JDBC** (For Database Connectivity)  
 🔹 **MySQL/SQLite** (For Data Storage)  
