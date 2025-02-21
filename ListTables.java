@@ -4,7 +4,7 @@ public class ListTables {
     public static void main(String[] args) {
         try {
             Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-            String dbURL = "jdbc:odbc:AccessDB"; // Ensure this DSN is correctly set up
+            String dbURL = "jdbc:odbc:AccessDB"; 
             Connection con = DriverManager.getConnection(dbURL);
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery("SELECT name FROM MSysObjects WHERE type=1 AND name NOT LIKE 'MSys%'");
