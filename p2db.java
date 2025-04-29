@@ -152,7 +152,7 @@ class f2 extends Frame {
         label1.setBounds(200, 200, 500, 25);
         add(label1);
 
-        Label label2 = new Label("Your form has been successfully submitted!");
+        Label label2 = new Label("Your entry has been successfully submitted!");
         label2.setBounds(200, 225, 500, 25);
         add(label2);
 

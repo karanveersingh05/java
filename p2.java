@@ -1,152 +1,129 @@
 import java.awt.*;
 import java.awt.event.*;
 
-class f1 extends Frame {
+public class p2 extends Frame implements ActionListener {
+    Button submitBtn, cancelBtn;
+    TextField namefield, passwdfield;
+    Checkbox mcheckbox, fcheckbox, h1checkbox, h2checkbox, h3checkbox;
+    Choice cityfield;
+    List statefield;
+    TextArea commentsfield;
 
-    f1() {
-        super("Form");
+    public p2() {
+        super("Registration Form");
         setLayout(null);
+        setSize(1920, 1080);
 
         Label name = new Label("Name:");
         name.setBounds(800, 100, 100, 25);
         add(name);
 
-        final TextField nameField = new TextField(); 
-        nameField.setBounds(950, 100, 150, 25);
-        add(nameField);
+        namefield = new TextField();
+        namefield.setBounds(950, 100, 150, 25);
+        add(namefield);
 
         Label passwd = new Label("Password:");
         passwd.setBounds(800, 150, 100, 25);
         add(passwd);
 
-        TextField passwdField = new TextField();
-        passwdField.setBounds(950, 150, 150, 25);
-        passwdField.setEchoChar('*'); 
-        add(passwdField);
+        passwdfield = new TextField();
+        passwdfield.setBounds(950, 150, 150, 25);
+        passwdfield.setEchoChar('*');
+        add(passwdfield);
 
         Label gender = new Label("Gender:");
         gender.setBounds(800, 200, 100, 25);
         add(gender);
 
         CheckboxGroup genderGroup = new CheckboxGroup();
-        Checkbox mCheckbox = new Checkbox("Male", genderGroup, false);
-        mCheckbox.setBounds(950, 200, 70, 25);
-        add(mCheckbox);
+        mcheckbox = new Checkbox("Male", genderGroup, false);
+        mcheckbox.setBounds(950, 200, 70, 25);
+        add(mcheckbox);
 
-        Checkbox fCheckbox = new Checkbox("Female", genderGroup, false);
-        fCheckbox.setBounds(1020, 200, 70, 25);
-        add(fCheckbox);
+        fcheckbox = new Checkbox("Female", genderGroup, false);
+        fcheckbox.setBounds(1030, 200, 70, 25);
+        add(fcheckbox);
 
         Label hobbies = new Label("Hobbies:");
         hobbies.setBounds(800, 250, 100, 25);
         add(hobbies);
 
-        Checkbox h1Checkbox = new Checkbox("Football");
-        h1Checkbox.setBounds(950, 250, 80, 25);
-        add(h1Checkbox);
+        h1checkbox = new Checkbox("Football");
+        h1checkbox.setBounds(950, 250, 80, 25);
+        add(h1checkbox);
 
-        Checkbox h2Checkbox = new Checkbox("Basketball");
-        h2Checkbox.setBounds(1030, 250, 80, 25);
-        add(h2Checkbox);
+        h2checkbox = new Checkbox("Basketball");
+        h2checkbox.setBounds(1030, 250, 80, 25);
+        add(h2checkbox);
 
-        Checkbox h3Checkbox = new Checkbox("Swimming");
-        h3Checkbox.setBounds(1110, 250, 80, 25);
-        add(h3Checkbox);
+        h3checkbox = new Checkbox("Swimming");
+        h3checkbox.setBounds(1110, 250, 80, 25);
+        add(h3checkbox);
 
         Label city = new Label("City:");
         city.setBounds(800, 300, 100, 25);
         add(city);
 
-        Choice cityField = new Choice();
-        cityField.add("Select City");
-        cityField.add("New Delhi");
-        cityField.add("Jaipur");
-        cityField.add("Mumbai");
-        cityField.add("Kolkata");
-        cityField.add("Bengaluru");
-        cityField.add("Chennai");
-        cityField.add("Noida");
-        cityField.add("Dehradun");
-        cityField.setBounds(950, 300, 150, 25);
-        add(cityField);
+        cityfield = new Choice();
+        cityfield.add("Select City");
+        cityfield.add("New Delhi");
+        cityfield.add("Jaipur");
+        cityfield.add("Mumbai");
+        cityfield.add("Kolkata");
+        cityfield.add("Bengaluru");
+        cityfield.add("Chennai");
+        cityfield.add("Noida");
+        cityfield.add("Dehradun");
+        cityfield.setBounds(950, 300, 150, 25);
+        add(cityfield);
 
         Label state = new Label("State:");
         state.setBounds(800, 350, 100, 25);
         add(state);
 
-        List stateField = new List();
-        stateField.add("Select State");
-        stateField.add("Delhi");
-        stateField.add("Rajasthan");
-        stateField.add("Maharashtra");
-        stateField.add("West Bengal");
-        stateField.add("Karnataka");
-        stateField.add("Tamil Nadu");
-        stateField.add("Uttar Pradesh");
-        stateField.add("Uttarakhand");
-        stateField.setBounds(950, 350, 150, 25);
-        add(stateField);
+        statefield = new List();
+        statefield.add("Select State");
+        statefield.add("Delhi");
+        statefield.add("Rajasthan");
+        statefield.add("Maharashtra");
+        statefield.add("West Bengal");
+        statefield.add("Karnataka");
+        statefield.add("Tamil Nadu");
+        statefield.add("Uttar Pradesh");
+        statefield.add("Uttarakhand");
+        statefield.setBounds(950, 350, 150, 100);
+        add(statefield);
 
         Label comments = new Label("Comments:");
-        comments.setBounds(800, 410, 100, 25);
+        comments.setBounds(800, 470, 100, 25);
         add(comments);
 
-        TextArea commentsField = new TextArea();
-        commentsField.setBounds(950, 410, 300, 150);
-        add(commentsField);
+        commentsfield = new TextArea();
+        commentsfield.setBounds(950, 470, 300, 150);
+        add(commentsfield);
 
-        Button submitBtn = new Button("Submit");
-        submitBtn.setBounds(900, 600, 80, 30);
-        submitBtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                new f2(nameField.getText());
-            }
-        });
+        submitBtn = new Button("Submit");
+        submitBtn.setBounds(900, 650, 80, 30);
+        submitBtn.addActionListener(this);
         add(submitBtn);
 
-        Button cancelBtn = new Button("Exit");
-        cancelBtn.setBounds(1000, 600, 80, 30);
-        cancelBtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
+        cancelBtn = new Button("Exit");
+        cancelBtn.setBounds(1000, 650, 80, 30);
+        cancelBtn.addActionListener(this);
         add(cancelBtn);
 
-        setSize(1920, 1080);
         setVisible(true);
     }
-}
 
-class f2 extends Frame {
-    f2(String labelText) {
-        super("Form Submitted");
-        setLayout(null);
-
-        Label label1 = new Label("Thank you, " + labelText + "!");
-        label1.setBounds(200, 200, 500, 25);
-        add(label1);
-
-        Label label2 = new Label("Your form has been successfully submitted!");
-        label2.setBounds(200, 225, 500, 25);
-        add(label2);
-
-        Button closeBtn = new Button("Exit");
-        closeBtn.setBounds(300, 300, 100, 25);
-        closeBtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
-        add(closeBtn);
-
-        setSize(800, 800);
-        setVisible(true);
+    public void actionPerformed(ActionEvent ae) {
+        if (ae.getSource() == submitBtn) {
+            new f2(namefield.getText());
+        } else if (ae.getSource() == cancelBtn) {
+            System.exit(0);
+        }
     }
-}
 
-public class p2 {
-    public static void main(String[] args) {
-        new f1();
+    public static void main(String args[]) {
+        p2 obj = new p2();
     }
 }

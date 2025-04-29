@@ -14,7 +14,7 @@ public class Ex_MultiFrame extends Frame {
         b2.setBounds(400, 200, 150, 100);
 
         add(b1);
-        add(b2);
+        add(b2); 
 
         b1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

@@ -1,32 +1,34 @@
 import java.awt.*;
 import java.awt.event.*;
 
-class f2 extends Frame {
-    f2(String labelText) {
+public class f2 extends Frame implements ActionListener {
+    Button closebtn;
+    Label label1, label2;
+
+    public f2(String labeltext) {
         super("Form Submitted");
         setLayout(null);
+        setSize(800, 800);
 
-        Label label1 = new Label("Thank you, " + labelText + "!");
+        label1 = new Label("Thank you, " + labeltext + "!");
         label1.setBounds(200, 200, 500, 25);
         add(label1);
 
-        Label label2 = new Label("Your form has been successfully submitted!");
-        label2.setBounds(200, 225, 500, 25);
+        label2 = new Label("Your form has been successfully submitted!");
+        label2.setBounds(200, 250, 500, 25);
         add(label2);
 
-        Button closeBtn = new Button("Exit");
-        closeBtn.setBounds(300, 300, 100, 25);
-        
-        closeBtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
+        closebtn = new Button("Exit");
+        closebtn.setBounds(300, 350, 100, 30);
+        closebtn.addActionListener(this);
+        add(closebtn);
 
-        add(closeBtn);
-
-        setSize(800, 800);
         setVisible(true);
     }
-}
 
+    public void actionPerformed(ActionEvent ae) {
+        if (ae.getSource() == closebtn) {
+            System.exit(0);
+        }
+    }
+}
